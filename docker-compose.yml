@@ -1,12 +1,62 @@
-version: '3'
+version: '3.8'
+
 services:
   backend:
+    container_name: uber-clone-backend
     build: ./backend
     ports:
-      - '3000:3000'
+      - "3000:3000"
     environment:
-      - NODE_ENV=development
-  database:
-    image: mongo:latest
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: senha
+      DB_NAME: uber_clone
+      JWT_SECRET: secreto
+    depends_on:
+      - db
+
+  db:
+    container_name: uber-clone-db
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: senha
+      POSTGRES_DB: uber_clone
     ports:
-      - '27017:27017'
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  admin-panel:
+    container_name: uber-clone-admin
+    build: ./admin-panel
+    ports:
+      - "3001:3000"
+    environment:
+      API_URL: http://backend:3000
+    depends_on:
+      - backend
+
+  passenger-app:
+    container_name: uber-clone-passenger
+    build: ./frontend/passenger-app
+    ports:
+      - "3002:19000"
+    environment:
+      API_URL: http://backend:3000
+    depends_on:
+      - backend
+
+  driver-app:
+    container_name: uber-clone-driver
+    build: ./frontend/driver-app
+    ports:
+      - "3003:19000"
+    environment:
+      API_URL: http://backend:3000
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

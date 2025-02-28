@@ -1,15 +1,20 @@
 {
-  ""name"": ""admin-panel"",
-  ""version"": ""1.0.0"",
-  ""main"": ""index.js"",
-  ""scripts"": {
-    ""start"": ""react-scripts start"",
-    ""build"": ""react-scripts build"",
-    ""test"": ""react-scripts test""
+  "name": "uber-clone-admin",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  ""dependencies"": {
-    ""react"": ""18.2.0"",
-    ""react-dom"": ""18.2.0"",
-    ""react-scripts"": ""5.0.1""
+  "dependencies": {
+    "axios": "^0.27.0",
+    "next": "^12.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/node": "^16.0.0",
+    "typescript": "^4.0.0"
   }
 }

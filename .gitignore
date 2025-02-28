@@ -1,0 +1,57 @@
+# Ignorar node_modules (dependências do Node.js)
+**/node_modules/
+
+# Ignorar arquivos de ambiente local
+.env
+*.env.local
+
+# Ignorar logs e diretórios de logs
+*.log
+logs/
+
+# Ignorar arquivos de configuração do IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Ignorar arquivos de build
+dist/
+build/
+out/
+.next/
+
+# Ignorar arquivos do Docker
+Dockerfile
+docker-compose.yml
+docker-compose.override.yml
+
+# Ignorar arquivos do banco de dados local
+*.db
+*.sqlite
+
+# Ignorar arquivos de cache
+.cache/
+
+# Ignorar arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos do Expo (se aplicável)
+.expo/
+
+# Ignorar arquivos do npm/yarn
+package-lock.json
+yarn.lock
+
+# Ignorar arquivos do TypeScript
+*.tsbuildinfo
+
+# Ignorar arquivos de coverage (testes)
+coverage/
+
+# Ignorar arquivos do Swagger gerados
+**/swagger-output.json

@@ -118,6 +118,7 @@ cd uber-clone
 ```bash
 docker-compose up --build
 ```
+
 4. Acesse os aplicativos:
 
 - Passageiro: http://localhost:3000
@@ -126,3 +127,16 @@ docker-compose up --build
 
 - Painel Administrativo: http://localhost:3002
 
+## Contribuição
+
+### Contribuições são bem-vindas! Siga os passos abaixo:
+
+1. Faça um fork do projeto.
+
+2. Crie uma branch para sua feature (git checkout -b feature/nova-feature).
+
+3. Commit suas mudanças (git commit -m 'Adiciona nova feature').
+
+4. Push para a branch (git push origin feature/nova-feature).
+
+5. Abra um Pull Request.
